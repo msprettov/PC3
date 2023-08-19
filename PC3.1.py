@@ -2,22 +2,36 @@
 #Mauro Pretto 
 #Manejo de errores 
 #1) 
+
 import math
 
-variable =input("La fracción de gasolina restante es: ") 
+while True:
+    try:
+        fraccion = input("Introduce una fracción en formato X/Y: ")
+        x, y = map(int, fraccion.split("/"))
+        porcentaje = x / y * 100 
+      
+        break
+     
 
-numeros= variable.split("/") 
-numero1 = int(numeros[0])
-numero2 = int(numeros[1]) 
+    except ValueError:
+        print("Error: la fracción debe estar en formato X/Y, donde X e Y son números enteros")
+    
+    
+    except ZeroDivisionError:
+        print("Error: el denominador no puede ser cero.")
 
-fraccion = numero1/numero2 
-porcentaje = math.ceil(fraccion*100) 
+ 
+if porcentaje < 1:
+    print("E")
+elif porcentaje > 99:
+    print("F")
+else:
+    print(math.ceil(porcentaje), "%") 
 
-print(f"La cantidad de combustible restante es {porcentaje} porciento")
+    
 
-#try: 
-#   print(numero1/numero2) 
-#except: 
+
    
 
 

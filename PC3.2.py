@@ -3,16 +3,20 @@
 #Manejo de errores  
 
 #2)
-
 lista = input("Ingrese las calificaciones: ")
 lista_f =  lista.split(",") 
 enteros=[]
+
 
 for i in lista_f :
     try: 
         calificacion = float(i) 
 
-        enteros.append(i)
+        enteros.append(calificacion) 
+        c=[]
+        for n in enteros :
+            b = round(n) 
+            c.append(b)
         
     
         
@@ -21,5 +25,4 @@ for i in lista_f :
         print("Valor incorrecto, intente de nuevo porfavor") 
        
         break
-print(f"La lista de calificaciones enteras es: {enteros}")
-#and enteros.append(round(i))
+print(f"La lista de calificaciones enteras es: {c}")
